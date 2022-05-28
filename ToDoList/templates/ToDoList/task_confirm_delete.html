@@ -1,0 +1,20 @@
+{% extends "ToDoList/main.html" %}
+
+{% load static %}
+
+
+{% block main %}
+    <div class="header-bar">
+        <a href="{% url 'ToDoList:tasks' %}">&#8592; Back</a>
+    </div>
+
+    <div class="card-body">
+        <form method="POST">
+            {% csrf_token %}
+            <p>Are you sure to wanna delete this task? {{task}}</p>
+            <input class="button" type="submit" value="Delete">
+        </form>
+    </div>
+
+
+{% endblock %}
